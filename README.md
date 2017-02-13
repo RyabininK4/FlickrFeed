@@ -20,5 +20,5 @@ https://www.flickr.com/services/feeds/docs/photos_pub..
 
 ### Скриншоты работы программы
 
-![image1](https://github.com/RyabininK4/FlickrFeed/blob/master/FlickerMA/Image/Снимок%20экрана%202017-02-13%20в%2011.48.59.png)![image2]()![image3](https://github.com/RyabininK4/FlickrFeed/blob/master/FlickerMA/Image/Снимок%20экрана%202017-02-13%20в%2011.47.31.png)
+![image1](https://github.com/RyabininK4/FlickrFeed/blob/master/FlickerMA/Image/Снимок%20экрана%202017-02-13%20в%2011.48.59.png)![image2](https://github.com/RyabininK4/FlickrFeed/blob/master/FlickerMA/Image/Снимок%20экрана%202017-02-13%20в%2021.21.22.png)![image3](https://github.com/RyabininK4/FlickrFeed/blob/master/FlickerMA/Image/Снимок%20экрана%202017-02-13%20в%2011.47.31.png)
 
