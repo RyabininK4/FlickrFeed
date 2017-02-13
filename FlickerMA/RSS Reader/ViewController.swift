@@ -48,22 +48,30 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                         //}
                         if let title = articleFromJson["title"] as? String,
                            let date = articleFromJson["date_taken"] as? String,
-                           let tags = articleFromJson["tags"] as? String,
-                           let url = articleFromJson["link"] as? String
+                           let tags = articleFromJson["tags"] as? String
+                           //let url = articleFromJson["link"] as? String,
+                            
                            {
                             article.date = date
                             article.tags = tags
                             article.headline = title
-                            article.url = url
+                            //article.url = url
                             //article.imageUrl = urlToImage
                            }
+                        if let url = articleFromJson["media"] {
+                            if let urlToImage = url["m"] as? String
+                            {
+                                article.imageUrl = urlToImage
+                            }
+                        }
+
                         self.articles?.append(article)
-                        print (json)
                     }
                 }
                 DispatchQueue.main.async {
                     self.tableview.reloadData()
                 }
+                
             } catch let error {
                 print(error)
             }
@@ -78,7 +86,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cell.title.text = self.articles?[indexPath.item].headline
         cell.tags.text = self.articles?[indexPath.item].tags
         cell.date.text = self.articles?[indexPath.item].date
-        //cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageUrl)!)
+        cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageUrl)!)
         
         return cell
     }
@@ -94,7 +102,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "web") as! WebViewController
         
-        webVC.url = self.articles?[indexPath.item].url
+        webVC.url = self.articles?[indexPath.item].imageUrl
         
         self.present(webVC, animated: true, completion: nil)
         
